@@ -24,7 +24,7 @@ if input_image is None:
 cols = st.columns(2)
 scale = cols[0].slider("Rescale the image", min_value=0.1, max_value=1.0, value=1.0)
 img = io.imread(input_image, as_gray=True)
-img = rescale(img, scale=scale, mode='reflect', multichannel=False)
+img = rescale(img, scale=scale, mode='reflect', channel_axis=None)
 
 fig, ax = plt.subplots()
 fig.colorbar(ax.imshow(img, cmap="gray", vmin=0, vmax=1.0), ax=ax)
